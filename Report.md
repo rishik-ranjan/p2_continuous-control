@@ -2,7 +2,6 @@
 * [Learning Algorithm](#learning-algorithm)
 * [Plot of Rewards](#plot-of-rewards)
 * [Ideas for Future Work](#ideas-for-future-work)
-* [References](#references)
 
 ## Learning Algorithm
 The Deep Deterministic Policy Gradient (DDPG) algorithm was used to solve this problem. This algorithm was proposed by [Lillicrap et al., 2016][1].
@@ -14,7 +13,6 @@ There are many other algorithms also which can work well on this problem. Some o
 3. Distributed Distributional Deep Deterministic Policy Gradient, D4PG ([Barth-Maron et al., 2018][5])
 
 #### Algorithm advantages
-The advantages of using DDPG algorithm are as follows:
 
 - It can handle continuous multi-dimensional action spaces better than Deep Q-network algorithm proposed by [Mnih et al., 2015][2]
 - It has a simple actor-critic architecture which is easy to implement and scale
@@ -85,8 +83,8 @@ We could try the following things to speed up the learning using DDPG algorithm:
 
 We found that the hyperparameters and model architecture described in the DDPG paper are indeed sufficient to learn a good policy. However, it can be rather slow. The learning is stable but it comes at the cost of speed. We could also try using A2C or PPO based algorithms to see if it gives better results without compromising on speed. 
 
-* [Lillicrap et al., 2016]: https://www.nature.com/articles/nature14236
-* [Mnih et al., 2015]: https://arxiv.org/abs/1509.02971
-* [Mnih et al., 2016]: https://arxiv.org/pdf/1602.01783.pdf
-* [Schulman et al., 2017]: https://arxiv.org/pdf/1707.06347.pdf
-* [Barth-Maron et al., 2018]: https://openreview.net/pdf?id=SyZipzbCb
+[1]: https://arxiv.org/abs/1509.02971
+[2]: https://www.nature.com/articles/nature14236
+[3]: https://arxiv.org/pdf/1602.01783.pdf
+[4]: https://arxiv.org/pdf/1707.06347.pdf
+[5]: https://openreview.net/pdf?id=SyZipzbCb
