@@ -2,10 +2,9 @@
 * [Learning Algorithm](#learning-algorithm)
 * [Plot of Rewards](#plot-of-rewards)
 * [Ideas for Future Work](#ideas-for-future-work)
-* [References](#references)
 
 ## Learning Algorithm
-The Deep Deterministic Policy Gradient (DDPG) algorithm was used to solve this problem. This algorithm was proposed by [Lillicrap et al., 2016][1].
+The Deep Deterministic Policy Gradient (DDPG) algorithm was used to solve this problem for a "single Agent". This algorithm was proposed by [Lillicrap et al., 2016][1].
 
 There are many other algorithms also which can work well on this problem. Some of these are:
 
@@ -14,7 +13,6 @@ There are many other algorithms also which can work well on this problem. Some o
 3. Distributed Distributional Deep Deterministic Policy Gradient, D4PG ([Barth-Maron et al., 2018][5])
 
 #### Algorithm advantages
-The advantages of using DDPG algorithm are as follows:
 
 - It can handle continuous multi-dimensional action spaces better than Deep Q-network algorithm proposed by [Mnih et al., 2015][2]
 - It has a simple actor-critic architecture which is easy to implement and scale
@@ -44,7 +42,7 @@ The DDPG algorithm has adopted recent advances from various other papers to addr
 
 2. Both the actor and critic networks are updated at each step. The target values for these networks are also updated at each step. In order to ensure stable convergence, the algorithm uses another set of "target" actor and critic networks whose weights are updated slowly at each step. 
 
-3. Each dimension of the vector observations from an environment may have different physical units which can scale differently. The DDPG algorithm uses the batch normalization technique to "whiten" state input and all layers of the actor and critic networks. 
+3. Vector observations from an environment may have different physical units which can scale differently. The DDPG algorithm uses the batch normalization technique to "whiten" the state input and all the layers of the actor and critic networks. 
 
 4. Ornstein-Uhlenbeck process is used to introduce temporally correlated noise to the actor policy. This was done to allow for exploration. 
 
@@ -81,12 +79,12 @@ The model was able to solve the task in x episodes
 ## Ideas for Future Work
 We could try the following things to speed up the learning using DDPG algorithm:
 * Reduce the number of hidden layers in the actor and critic networks
-* Try a different learning rate for actor and critic networks, a different value for weight_decay and batch size. We noticed that the
+* Try a different learning rate for actor and critic networks, a different value for weight_decay and batch size. 
 
 We found that the hyperparameters and model architecture described in the DDPG paper are indeed sufficient to learn a good policy. However, it can be rather slow. The learning is stable but it comes at the cost of speed. We could also try using A2C or PPO based algorithms to see if it gives better results without compromising on speed. 
 
-* [Lillicrap et al., 2016]: https://www.nature.com/articles/nature14236
-* [Mnih et al., 2015]: https://arxiv.org/abs/1509.02971
-* [Mnih et al., 2016]: https://arxiv.org/pdf/1602.01783.pdf
-* [Schulman et al., 2017]: https://arxiv.org/pdf/1707.06347.pdf
-* [Barth-Maron et al., 2018]: https://openreview.net/pdf?id=SyZipzbCb
+[1]: https://arxiv.org/abs/1509.02971
+[2]: https://www.nature.com/articles/nature14236
+[3]: https://arxiv.org/pdf/1602.01783.pdf
+[4]: https://arxiv.org/pdf/1707.06347.pdf
+[5]: https://openreview.net/pdf?id=SyZipzbCb
