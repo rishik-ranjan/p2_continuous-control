@@ -4,7 +4,7 @@
 * [Ideas for Future Work](#ideas-for-future-work)
 
 ## Learning Algorithm
-The Deep Deterministic Policy Gradient (DDPG) algorithm was used to solve this problem. This algorithm was proposed by [Lillicrap et al., 2016][1].
+The Deep Deterministic Policy Gradient (DDPG) algorithm was used to solve this problem for a "single Agent". This algorithm was proposed by [Lillicrap et al., 2016][1].
 
 There are many other algorithms also which can work well on this problem. Some of these are:
 
@@ -42,7 +42,7 @@ The DDPG algorithm has adopted recent advances from various other papers to addr
 
 2. Both the actor and critic networks are updated at each step. The target values for these networks are also updated at each step. In order to ensure stable convergence, the algorithm uses another set of "target" actor and critic networks whose weights are updated slowly at each step. 
 
-3. Each dimension of the vector observations from an environment may have different physical units which can scale differently. The DDPG algorithm uses the batch normalization technique to "whiten" state input and all layers of the actor and critic networks. 
+3. Vector observations from an environment may have different physical units which can scale differently. The DDPG algorithm uses the batch normalization technique to "whiten" the state input and all the layers of the actor and critic networks. 
 
 4. Ornstein-Uhlenbeck process is used to introduce temporally correlated noise to the actor policy. This was done to allow for exploration. 
 
@@ -79,7 +79,7 @@ The model was able to solve the task in x episodes
 ## Ideas for Future Work
 We could try the following things to speed up the learning using DDPG algorithm:
 * Reduce the number of hidden layers in the actor and critic networks
-* Try a different learning rate for actor and critic networks, a different value for weight_decay and batch size. We noticed that the
+* Try a different learning rate for actor and critic networks, a different value for weight_decay and batch size. 
 
 We found that the hyperparameters and model architecture described in the DDPG paper are indeed sufficient to learn a good policy. However, it can be rather slow. The learning is stable but it comes at the cost of speed. We could also try using A2C or PPO based algorithms to see if it gives better results without compromising on speed. 
 
