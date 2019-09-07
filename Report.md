@@ -73,7 +73,10 @@ We also modified the OU process implementation to use np.random.randn() instead 
 
 
 ## Plot of Rewards
-The model was able to solve the task in x episodes
+The model was able to solve the task in 232 episodes
+
+Environment solved in 232 episodes!	Average Score: 30.10
+
 ![picture](result.png)
 
 ## Ideas for Future Work
